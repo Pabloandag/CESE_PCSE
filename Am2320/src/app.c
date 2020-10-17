@@ -56,6 +56,7 @@ bool_t app_bleTest(){
  * Setea el modo inicial de la app.
  * Inicia parámetros de comunicación BT y con una PC.
  * Inicia las configuraciones por defecto del sensor.
+ * Si no se requiere info se puede inicializar infoUart con NULL
  */
 bool_t app_init(app_mode_t mode ,uint32_t baudRate,uartMap_t btUart,uartMap_t infoUart){
 
@@ -68,6 +69,7 @@ bool_t app_init(app_mode_t mode ,uint32_t baudRate,uartMap_t btUart,uartMap_t in
 	appConfig.baudRate = baudRate;
 	uartConfig( btUart, baudRate );
 
+	// Config info uart
 	if(infoUart != NULL) {
 		appConfig.infoUart = infoUart;
 		appConfig.info = TRUE;

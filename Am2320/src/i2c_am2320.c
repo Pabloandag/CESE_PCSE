@@ -6,6 +6,7 @@
 #define UART_BLUETOOTH UART_232
 #define UART_PC        UART_USB
 #define BAUDRATE 9600
+#define REFRESH_RATE 500
 
 /*==================[declaraciones de funciones externas]====================*/
 
@@ -25,7 +26,7 @@ int main( void )
 
 	   app_update();
 
-	   delay(500); // Espero 500 ms.
+	   delay(REFRESH_RATE); // Espero 500 ms.
    }
    // NO DEBE LLEGAR NUNCA AQUI, debido a que a este programa se ejecuta
    // directamente sobre un microcontrolador y no es llamado por ningun
